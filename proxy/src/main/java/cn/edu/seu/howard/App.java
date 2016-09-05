@@ -22,5 +22,10 @@ public class App {
         ProxyHandler proxy = new ProxyHandler();
         UserService userService1 = (UserService) proxy.bind(new UserServiceImpl());
         userService1.add();
+
+        //Cglib动态代理。可对任何非final类以继承的方式创建子类，实现动态代理
+        CglibProxy cglibProxy = new CglibProxy();
+        UserServiceImpl1 userServiceCglib = (UserServiceImpl1) cglibProxy.getInstance(new UserServiceImpl1());
+        userServiceCglib.add();
     }
 }
