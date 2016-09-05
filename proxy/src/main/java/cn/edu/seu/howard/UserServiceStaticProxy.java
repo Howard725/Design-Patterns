@@ -9,8 +9,8 @@ public class UserServiceStaticProxy implements UserService{
     }
 
     public void add() {
-        System.out.println("-------before---------");
+        System.out.println("-------static proxy before---------");
         target.add();
-        System.out.println("-------after---------");
+        System.out.println("-------static proxy after---------");
     }
 }
